@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule  } from '@angular/material/slider';
 import {  MatToolbarModule  } from '@angular/material/toolbar';
+import {  MatCardModule  } from '@angular/material/card';
+import {  MatListModule  } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {  MatToolbarModule  } from '@angular/material/toolbar';
     FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

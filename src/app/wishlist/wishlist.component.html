@@ -1,0 +1,16 @@
+
+
+
+<mat-card>
+  <mat-card-title>Dreams</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let wish of wishList">
+
+        <h3 mat-line>{{wish.descricao}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<button mat-button (click)="listar()">Action</button>

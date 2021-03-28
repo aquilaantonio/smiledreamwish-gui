@@ -1,3 +1,5 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { WishService } from './../wish/wish.service';
 import { Wish } from './../wish/wish.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WishlistComponent implements OnInit {
 
+  wishList: Array<Wish>;
+  constructor(private wishService : WishService) {
+    this.wishList = [];
+   }
 
-  constructor() { }
+  ngOnInit() {
+    this.listar();
+  }
 
-  ngOnInit(): void {
+  listar(){
 
+    this.wishService.listar().subscribe(response => this.wishList = response);
+    this.wishList.forEach(element => {
+      alert(element.descricao)
+    });
   }
 
 }
