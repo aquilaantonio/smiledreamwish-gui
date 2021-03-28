@@ -18,6 +18,14 @@ export class WishService {
     .set('Accept', 'application/json');
    // console.log("Listar wish",this.http.get<any>( 'http://localhost:8080/smiles/buscar/wish-list/1234560003'),{headers: httpHeaders});
 
-    return this.http.get<Wish>( 'https://app-smiles-wish.herokuapp.com/smiles/buscar/wish-list-all',{headers: httpHeaders});
+    //return this.http.get<Wish>( 'https://app-smiles-wish.herokuapp.com/smiles/buscar/wish-list-all',{headers: httpHeaders});
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+      }),
+  };
+    return this.http.get('https://app-smiles-wish.herokuapp.com/smiles/buscar/wish-list-all',httpOptions);
+
   }
 }
